@@ -35,8 +35,7 @@ Before running this project, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
-   cd temperature-dashboard
+   git clone <https://github.com/Fahim2280/GizanTech-Front-End.git>
    ```
 
 2. Install dependencies:
@@ -133,9 +132,10 @@ This project is licensed under the MIT License.
 
 ---
 
-## Contributors
+## Acknowledgements
 
-- **Md Fahim Alam**
+- [Chart.js](https://www.chartjs.org/)
+- [React.js](https://reactjs.org/)
+- [API](http://localhost:7000/temperature/temperatureData)
 
-Feel free to fork and contribute to this project!
 
