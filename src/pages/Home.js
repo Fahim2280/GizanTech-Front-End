@@ -13,14 +13,14 @@ const Home = () => {
       try {
         const data = await fetchTemperatureData();
 
-        // Update the current temperature display
+   
         setCurrentTemperature({
           temperature: data.temperature,
           unit: data.unit,
           timestamp: new Date(data.timestamp).toLocaleString(),
         });
 
-        // Update the chart data, keeping only the last 10 entries
+        
         setTemperatureData((prevData) => [
           ...prevData.slice(-9),
           {
@@ -35,13 +35,12 @@ const Home = () => {
       }
     };
 
-    // Initial fetch
+ 
     fetchData();
 
-    // Polling every 5 seconds
+
     const intervalId = setInterval(fetchData, 5000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
@@ -64,7 +63,7 @@ const Home = () => {
     <div style={{ textAlign: "center", padding: "20px" }}>
       <h1>Real-Time Temperature Dashboard</h1>
 
-      {/* Display the current temperature */}
+      {}
       {currentTemperature && (
         <div
           style={{ marginBottom: "20px", fontSize: "18px", fontWeight: "bold" }}
@@ -75,7 +74,7 @@ const Home = () => {
         </div>
       )}
 
-      {/* Render the chart */}
+      {}
       <TemperatureChart chartData={chartData} />
     </div>
   );
