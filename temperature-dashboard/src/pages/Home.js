@@ -1,4 +1,4 @@
-// src/pages/Home.js
+
 import React, { useEffect, useState } from "react";
 import { fetchTemperatureData } from "../services/api";
 import TemperatureChart from "../components/TemperatureChart";
