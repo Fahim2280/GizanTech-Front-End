@@ -7,14 +7,17 @@ This project is a **Real-Time Temperature Dashboard** built with React, which di
 ## Features
 
 1. **Real-Time Data Fetching**:
+
    - Fetches temperature data from an API every 5 seconds.
    - Displays the latest temperature reading with the unit and timestamp.
 
 2. **Dynamic Chart Updates**:
+
    - Visualizes temperature trends dynamically using `chart.js`.
    - Keeps the chart updated without page reloads.
 
 3. **Responsive Design**:
+
    - Fully responsive and mobile-friendly layout.
 
 4. **User-Friendly Interface**:
@@ -34,11 +37,12 @@ Before running this project, ensure you have the following installed:
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone <https://github.com/Fahim2280/GizanTech-Front-End.git>
-   ```
 
+   ```bash
+   git clone https://github.com/Fahim2280/GizanTech-Front-End.git
+   ```
 2. Install dependencies:
+
    ```bash
    npm install
    # or
@@ -46,6 +50,7 @@ Before running this project, ensure you have the following installed:
    ```
 
 3. Start the development server:
+
    ```bash
    npm start
    # or
@@ -62,10 +67,13 @@ Before running this project, ensure you have the following installed:
 ## API Integration
 
 The application fetches temperature data from the following API:
+
 ```
 http://localhost:7000/temperature/temperatureData
 ```
+
 ### Expected JSON Response Format
+
 ```json
 {
   "temperature": "41°C",
@@ -106,10 +114,12 @@ http://localhost:7000/temperature/temperatureData
 ## Technologies Used
 
 - **Frontend**:
+
   - React.js
   - Chart.js
 
 - **Backend**:
+
   - API should be hosted separately (sample URL: `http://localhost:7000`)
 
 - **Styling**:
@@ -137,5 +147,3 @@ This project is licensed under the MIT License.
 - [Chart.js](https://www.chartjs.org/)
 - [React.js](https://reactjs.org/)
 - [API](http://localhost:7000/temperature/temperatureData)
-
-
