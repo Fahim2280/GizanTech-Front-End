@@ -1,0 +1,66 @@
+// src/components/TemperatureChart.js
+import React from "react";
+import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+// Register required chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+const TemperatureChart = ({ temperatureData }) => {
+  // Generate dummy timestamps and temperatures if no historical data
+  const labels = Array.from({ length: 10 }, (_, i) =>
+    new Date(Date.now() - i * 60000).toLocaleTimeString()
+  ).reverse();
+
+  const data = {
+    labels, // X-axis labels (timestamps)
+    datasets: [
+      {
+        label: "Temperature (°C)",
+        data: labels.map(() => Math.random() * 10 + 30), // Simulate random temperature data
+        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        tension: 0.4, // Smooth curve
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Temperature Trend",
+      },
+    },
+  };
+
+  return (
+    <div style={{ width: "600px", margin: "0 auto" }}>
+      <Line data={data} options={options} />
+    </div>
+  );
+};
+
+export default TemperatureChart;
