@@ -1,70 +1,141 @@
-# Getting Started with Create React App
+# Real-Time Temperature Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **Real-Time Temperature Dashboard** built with React, which displays real-time temperature data from an API, visualized dynamically using a line chart. It also shows the most recent temperature reading at the top of the page.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **Real-Time Data Fetching**:
+   - Fetches temperature data from an API every 5 seconds.
+   - Displays the latest temperature reading with the unit and timestamp.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Dynamic Chart Updates**:
+   - Visualizes temperature trends dynamically using `chart.js`.
+   - Keeps the chart updated without page reloads.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Responsive Design**:
+   - Fully responsive and mobile-friendly layout.
 
-### `npm test`
+4. **User-Friendly Interface**:
+   - Simple, clean, and visually appealing design.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Before running this project, ensure you have the following installed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (<= 14.x)
+- npm or yarn package manager
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd temperature-dashboard
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start the development server:
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## API Integration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application fetches temperature data from the following API:
+```
+http://localhost:7000/temperature/temperatureData
+```
+### Expected JSON Response Format
+```json
+{
+  "temperature": "41°C",
+  "unit": "Celsius",
+  "timestamp": "2024-12-27T13:38:46.456Z"
+}
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+├── public
+├── src
+│   ├── components
+│   │   └── TemperatureChart.js  # Line chart component using Chart.js
+│   ├── pages
+│   │   └── Home.js              # Main dashboard page
+│   ├── services
+│   │   └── api.js               # API call function
+│   ├── App.js                   # Root component
+│   └── index.js                 # Entry point
+└── README.md                    # Project documentation
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Launch the application using the installation instructions above.
+2. The dashboard will display:
+   - The **current temperature**, unit, and last updated time at the top.
+   - A dynamically updating line chart showing temperature trends.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Technologies Used
 
-### Deployment
+- **Frontend**:
+  - React.js
+  - Chart.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Backend**:
+  - API should be hosted separately (sample URL: `http://localhost:7000`)
 
-### `npm run build` fails to minify
+- **Styling**:
+  - Inline CSS for simplicity
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Future Enhancements
+
+1. Implement WebSocket for true real-time updates.
+2. Add unit conversion between Celsius and Fahrenheit.
+3. Add support for multiple sensors and locations.
+4. Enhance the design with more advanced UI libraries.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Contributors
+
+- **Md Fahim Alam**
+
+Feel free to fork and contribute to this project!
+

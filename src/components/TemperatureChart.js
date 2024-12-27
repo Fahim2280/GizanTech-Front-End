@@ -1,4 +1,4 @@
-
+// src/components/TemperatureChart.js
 import React from "react";
 import { Line } from "react-chartjs-2";
 import {
@@ -12,6 +12,7 @@ import {
   Legend,
 } from "chart.js";
 
+// Register required chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,24 +23,7 @@ ChartJS.register(
   Legend
 );
 
-const TemperatureChart = ({ temperatureData }) => {
-  const labels = Array.from({ length: 10 }, (_, i) =>
-    new Date(Date.now() - i * 60000).toLocaleTimeString()
-  ).reverse();
-
-  const data = {
-    labels, 
-    datasets: [
-      {
-        label: "Temperature (°C)",
-        data: labels.map(() => Math.random() * 10 + 30), 
-        borderColor: "rgba(75, 192, 192, 1)",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        tension: 0.4, 
-      },
-    ],
-  };
-
+const TemperatureChart = ({ chartData }) => {
   const options = {
     responsive: true,
     plugins: {
@@ -49,14 +33,14 @@ const TemperatureChart = ({ temperatureData }) => {
       },
       title: {
         display: true,
-        text: "Temperature Trend",
+        text: "Real-Time Temperature Trend",
       },
     },
   };
 
   return (
     <div style={{ width: "600px", margin: "0 auto" }}>
-      <Line data={data} options={options} />
+      <Line data={chartData} options={options} />
     </div>
   );
 };
